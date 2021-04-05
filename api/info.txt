@@ -1,0 +1,2 @@
+npm install --save json-server 
+configure server to run on port localhost:3001
