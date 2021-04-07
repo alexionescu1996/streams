@@ -1,2 +1,32 @@
 npm install --save json-server 
 configure server to run on port localhost:3001
+
+1) create action to send request
+2) create reducer to create new state from response
+3) add new reducer to combineReducers method
+4) import {fetchStreams} from actions as a prop of the Component
+5) mapStateToProps va crea atributul streams pentru Componenta curenta, StreamList cu valoarea din state = response din reducers
+
+ex:
+streams = axios.create(baseURL);
+
+[action]
+'FETCH_STREAMS' fetchStreams() => streams.get('/streams') 
+
+[reducer]
+return { ...state, ..._.mapKeys(action.payload, 'id') };
+
+[StreamList]
+import { fetchStreams } from '../../actions';
+componentDidMount() {
+    this.props.fetchStreams();
+}
+
+const mapStateToProps = (state) => {
+    return { streams: Object.values(state.streams) }
+}
+
+export default connect(
+    mapStateToProps,
+    { fetchStreams }
+)(StreamList);
