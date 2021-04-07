@@ -19,6 +19,22 @@
       "description": "Here's some stream",
       "title": "Other Stream",
       "id": 4
+    },
+    {
+      "title": "this was created by me",
+      "description": "i created this ",
+      "id": 5
+    },
+    {
+      "title": "testing user id",
+      "description": "user id",
+      "id": 6
+    },
+    {
+      "title": "give me user id",
+      "description": "user id",
+      "userId": "101718381644975367521",
+      "id": 7
     }
   ]
 }
